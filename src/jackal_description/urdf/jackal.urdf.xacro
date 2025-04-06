@@ -24,7 +24,7 @@
   <material name="black"><color rgba="0.15 0.15 0.15 1.0" /></material>
 
   <xacro:macro name="wheel" params="prefix *joint_pose">
-
+  
     <link name="${prefix}_wheel_link">
       <visual>
         <origin xyz="0 0 0" rpy="${PI/2} 0 0"/>
@@ -92,8 +92,8 @@
     <origin xyz="${-wheelbase/2} ${-track/2} ${wheel_vertical_offset}" rpy="0 0 0" />
   </xacro:wheel>
 
-  <link name="base_link"></link>
-
+  <link name="base_link" />
+  
   <joint name="base_link_joint" type="fixed">
     <origin xyz="0 0 0" rpy="0 0 0" />
     <parent link="base_link"/>
@@ -118,12 +118,12 @@
       <!-- Center of mass -->
       <origin xyz="0.012  0.002 0.067" rpy="0 0 0"/>
       <mass value="16.523"/>
-      <!-- Moments of inertia: ( chassis without wheels ) -->
+      <!-- Moments of inertia -->
       <inertia
         ixx="0.3136" ixy="-0.0008" ixz="0.0164"
         iyy="0.3922" iyz="-0.0009"
         izz="0.4485"/>
-      </inertial>
+    </inertial>
   </link>
 
   <xacro:unless value="$(optenv JACKAL_FRONT_ACCESSORY_FENDER 0)">
@@ -225,28 +225,48 @@
     <origin xyz="-0.180 0.126 0.1815" />
   </joint>
 
-  <link name="mid_mount"></link>
+  <link name="mid_mount" />
   <joint name="mid_mount_joint" type="fixed">
     <parent link="chassis_link" />
     <child link="mid_mount" />
     <origin xyz="0 0 ${chassis_height}" />
   </joint>
 
-  <link name="rear_mount"></link>
+  <link name="rear_mount" />
   <joint name="rear_mount_joint" type="fixed">
     <parent link="mid_mount" />
     <child link="rear_mount" />
     <origin xyz="${-mount_spacing} 0 0" />
   </joint>
 
-  <link name="front_mount"></link>
+  <link name="front_mount" />
   <joint name="front_mount_joint" type="fixed">
     <parent link="mid_mount" />
     <child link="front_mount" />
     <origin xyz="${mount_spacing} 0 0" />
   </joint>
 
-  <!-- Bring in simulation data for Gazebo. -->
+  <!-- 左侧挂载点 link -->
+  <link name="left_mount"/>
+
+  <!-- 将 left_mount 固定到 mid_mount 上 -->
+  <joint name="left_mount_joint" type="fixed">
+    <parent link="mid_mount" />
+    <child link="left_mount" />
+    <!-- 沿 Y 方向偏移 mount_spacing 到左侧，并与 mid_mount 同样的高度 -->
+    <origin xyz="0 0.12 4" rpy="-0.42 0 0"/>
+  </joint>
+
+  <!-- 新增：第二个左侧挂载点定义，必须在加载 accessories.urdf.xacro 前定义 -->
+  <link name="left_mount_2"/>
+  <joint name="left_mount_2_joint" type="fixed">
+    <parent link="left_mount" />
+    <child link="left_mount_2" />
+    <!-- 根据需要设置一个轻微偏移（例如沿 X 方向偏移 0.1 m） -->
+    <origin xyz="0.1 0 0" rpy="-0.275 0 0"/>
+  </joint>
+
+ <!-- Bring in simulation data for Gazebo. -->
   <xacro:include filename="$(find jackal_description)/urdf/jackal.gazebo" />
 
   <!-- Optional standard accessories, including their simulation data. The rendering
@@ -254,9 +274,4 @@
        default each one to off.-->
   <xacro:include filename="$(find jackal_description)/urdf/accessories.urdf.xacro" />
 
-  <!-- Optional custom includes. -->
-  <xacro:include filename="$(optenv JACKAL_URDF_EXTRAS empty.urdf)" />
-
-  <!-- Optional for Clearpath internal softwares -->
-  <xacro:include filename="$(optenv CPR_URDF_EXTRAS empty.urdf)" />
 </robot>
