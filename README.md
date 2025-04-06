@@ -148,7 +148,7 @@ We provide three methods for SLAM mapping：
 Once completed **Step 2** mapping and saved your map, quit the mapping process.
 
 Then, in the second terminal:
-
+python g.py
 ```bash
 # Load a map and launch AMCL localizer
 roslaunch me5413_world navigation.launch
