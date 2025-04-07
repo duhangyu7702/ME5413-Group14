@@ -155,9 +155,8 @@ We provide three methods for SLAM mapping：
 
 ### 3. Navigation
 
-Once completed **Step 2** mapping and saved your map, quit the mapping process.
-
-
+First, you need generate the random objects in the gazebo world.
+Then, run the following commond.
   
 ```bash
 # Load a map and launch AMCL localizer
@@ -170,7 +169,6 @@ python g.py
   
   ![rviz_panel_image](src/me5413_world/media/control_panel.png)
 
-![rviz_navigation_image](src/me5413_world/media/rviz_navigation.png)
 
 
 ## Contribution
