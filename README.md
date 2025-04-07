@@ -59,11 +59,11 @@ roslaunch me5413_world manual.launch
 
 We provide three methods for SLAM mapping：
 
-* A-LOAM (Recommened)
-* Cartographer
-* FAST-LIO
+* [A-LOAM](https://github.com/HKUST-Aerial-Robotics/A-LOAM) (Recommened)
+* [Cartographer]
+* [FAST-LIO](https://github.com/hku-mars/FAST_LIO.git)
 
-**Note**: Due to computational limitations, we recommend that you first record and prepare the relevant topic data, then use the SLAM algorithm to create your map. Since the data has been pre-recorded, you can use it directly.
+**Note**: Due to computational limitations, we recommend that you first record and prepare the relevant topic data, then use the SLAM algorithm to create your map.
 
 #### 2.1 A-LOAM
 
