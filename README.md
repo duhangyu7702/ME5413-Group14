@@ -148,6 +148,11 @@ We provide three methods for SLAM mapping：
 
    ![rviz_nmapping_image](src/me5413_world/media/rviz_mapping.png)
 
+#### 2.4 Performance
+
+   ![evo1_image](image/EVO1.png)
+   ![evo2_image](image/EVO2.png)
+
 ### 3. Navigation
 
 Once completed **Step 2** mapping and saved your map, quit the mapping process.
