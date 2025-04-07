@@ -67,7 +67,7 @@ We provide three methods for SLAM mapping：
 
 #### 2.1 A-LOAM
 
-   ![aloam_image](images/A-LOAM.png)
+   ![aloam_image](image/A-LOAM.png)
 
    ```bash
    # Launch the A-LOAM algorithm
