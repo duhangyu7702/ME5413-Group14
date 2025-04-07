@@ -104,6 +104,8 @@ We provide three methods for SLAM mapping：
 
 #### 2.2 Cartographer
 
+    ![carto_image](image/Cartographer.png)
+
    Since Cartographer is not available in final project workspace, you need to open the Cartographer workspace and run the following command.
    
    ```bash
@@ -123,6 +125,8 @@ We provide three methods for SLAM mapping：
    ```
 
 #### 2.3 Fast-LIO
+
+    ![fastlio_image](image/FAST-LIO.png)
    
    ```bash
    # Launch the FAST-LIO algorithm
