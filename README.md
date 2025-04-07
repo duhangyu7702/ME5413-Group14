@@ -26,7 +26,7 @@ NUS ME5413 Autonomous Mobile Robotics Final Project
 
 * Repository setup
    ```
-  git clone [https://github.com/Cruel5212/ME5413_Final_Project_Group14.git](https://github.com/duhangyu7702/ME5413-Group14)
+  git clone https://github.com/Cruel5212/ME5413_Final_Project_Group14.git
   cp -r ~/ME5413_Final_Project/src/me5413_world/models/* ~/.gazebo/models
   cd ME5413_Final_Project
   rosdep install --from-paths src --ignore-src -r -y
