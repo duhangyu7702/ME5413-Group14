@@ -67,6 +67,8 @@ We provide three methods for SLAM mapping：
 
 #### 2.1 A-LOAM
 
+   ![aloam_image](images/A-LOAM.png)
+
    ```bash
    # Launch the A-LOAM algorithm
    roslaunch aloam_velodyne aloam_velodyne_VLP_16.launch
