@@ -172,4 +172,4 @@ python g.py
 
 ## License
 
-The [ME5413_Final_Project_Group14](https://github.com/duhangyu7702/ME5413-Group14) is released under the [MIT License]
+The [ME5413_Final_Project_Group14](https://github.com/duhangyu7702/ME5413-Group14) is released under the [MIT License](https://github.com/duhangyu7702/ME5413-Group14/blob/main/LICENSE)
