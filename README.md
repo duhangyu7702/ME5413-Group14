@@ -170,17 +170,6 @@ python g.py
   ![rviz_panel_image](src/me5413_world/media/control_panel.png)
 
 
-
-## Contribution
-
-You are welcome contributing to this repo by opening a pull-request
-
-We are following:
-
-* [Google C++ Style Guide](https://google.github.io/styleguide/cppguide.html),
-* [C++ Core Guidelines](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#main),
-* [ROS C++ Style Guide](http://wiki.ros.org/CppStyleGuide)
-
 ## License
 
 The [ME5413_Final_Project](https://github.com/NUS-Advanced-Robotics-Centre/ME5413_Final_Project) is released under the [MIT License](https://github.com/NUS-Advanced-Robotics-Centre/ME5413_Final_Project/blob/main/LICENSE)
